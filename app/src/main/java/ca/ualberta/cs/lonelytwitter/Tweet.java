@@ -27,7 +27,7 @@ public abstract class Tweet {
 
     public void setMessage(String message) throws TweetsTooLongException {
         if(message.length() > 140) {
-            //Do the thing
+            //Do the thin
             throw new TweetsTooLongException();
         }
         this.message = message;
