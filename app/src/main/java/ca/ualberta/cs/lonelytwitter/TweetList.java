@@ -19,4 +19,12 @@ public class TweetList {
     public Tweet getTweet(int i) {
         return tweets.get(i);
     }
+
+    public void delete(Tweet tweet) {
+        tweets.remove(tweet);
+    }
+
+    public int getCount() {
+        return tweets.size();
+    }
 }
