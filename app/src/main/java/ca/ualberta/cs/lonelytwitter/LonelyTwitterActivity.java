@@ -1,3 +1,10 @@
+/*
+ Copyright (c) 2016 Team something, CMPUT 301 University of Alberta - All Rights Reserved.
+ You may use, distribute, and copy all parts of this cod under terms and conditions of
+ University of Alberta and the Code of Student Behaviour.
+ You can find the copy of license at https://www.github.com/Teamsomething/...
+ For further information, contact me at email@example.ca
+ */
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -24,9 +31,43 @@ import android.widget.ListView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+/**
+ * This is the main view class of LonelyTwitter project.<p> It handles all
+ * user interactions as well as file manipulations. </p>
+ * <pre> All the files are stored in the format of "json" files stored in Emulator,
+ * accessible       from Android Device Monitor </pre>
+ * <code> Pseudo code sample:
+ * open some file ... <br>
+ * attach some text... <br>
+ * close the file. <br>
+ * </code>
+ * <ul>
+ * <li>an item</li>
+ * <li>another item</li>
+ * <li>yet another item</li>
+ * <li>again another item</li>
+ * </ul>
+ * <ol>
+ * <li>an item</li>
+ * <li>another item</li>
+ * <li>yet another item</li>
+ * <li>again another item</li>
+ * </ol>
+ *
+ * @author Justin
+ * @see NormalTweet
+ * @see Tweet
+ * @see java.io.FileNotFoundException
+ * @since 1.0
+ */
 public class LonelyTwitterActivity extends Activity {
 
-	private static final String FILENAME = "file.sav";
+    /**
+     * This is the filename that is being save/loaded and contains all the past tweets
+     * @see #loadFromFile()
+     * @see #saveInFile()
+     */
+    private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
 
@@ -82,7 +123,12 @@ public class LonelyTwitterActivity extends Activity {
 		oldTweetsList.setAdapter(adapter);
 	}
 
-	private void loadFromFile() {
+    /**
+     * This method loads the tweets from FILE_NAME (file.save), and ...
+     * @throws FileNotFoundException
+     * @exception RuntimeException
+     */
+    private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
 			BufferedReader in = new BufferedReader(new InputStreamReader(fis));

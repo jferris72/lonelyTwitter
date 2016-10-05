@@ -1,10 +1,19 @@
 package ca.ualberta.cs.lonelytwitter;
 
 /**
- * Created by watts1 on 9/13/16.
+ * Important tweet extends class tweet
+ * To be used if you want the tweet to stand out and be marked as important
+ * For regular tweets use NormalTweet
+ * @see Tweet
+ * @see NormalTweet
  */
 public class ImportantTweet extends Tweet {
 
+    /**
+     * Instantiates a new Important tweet.
+     *
+     * @param message the message
+     */
     public ImportantTweet(String message){
         super(message);
     }

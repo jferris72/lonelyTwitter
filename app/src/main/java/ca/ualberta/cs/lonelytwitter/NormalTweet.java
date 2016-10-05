@@ -1,10 +1,17 @@
 package ca.ualberta.cs.lonelytwitter;
 
 /**
- * Created by watts1 on 9/13/16.
+ * Normal tweet extends tweet, use for all normal tweets
+ * If desire an important tweet use Important tweet
+ * @see ImportantTweet
  */
 public class NormalTweet extends Tweet implements Tweetable {
 
+    /**
+     * This constructor makes a normalTweet with given string parameter
+     *
+     * @param message this parameter is the given string for the tweet. If it is set to empty                string then it will be replaced by...
+     */
     public NormalTweet(String message){
         super(message);
     }
